@@ -1,0 +1,165 @@
+$COLUMNS: 12;
+$GUTTER: 1rem;
+
+$xs-min: 0;
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+
+$SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
+
+.container {
+	max-width: 1450px;
+	padding: 0 1rem;
+	margin: auto;
+}
+
+.row {
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 (-$GUTTER / 2);
+
+	&.no-gutter {
+		margin: {
+			left: 0;
+			right: 0;
+		}
+
+		> * {
+			padding: {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+}
+
+@mixin col {
+	box-sizing: border-box;
+	flex: 1 1 auto;
+	padding: 0 $GUTTER / 2;
+	word-wrap: break-word;
+	word-break: break-all;
+
+	&.row {
+		flex-direction: column;
+		margin: {
+			left: 0;
+			right: 0;
+		};
+
+		> .row {
+			flex: 1 1 auto;
+		}
+	}
+}
+
+
+@mixin generate ($size-name: "") {
+	.start#{$size-name} {
+		justify-content: flex-start;
+	}
+	.center#{$size-name} {
+		justify-content: center;
+	}
+	.end#{$size-name} {
+		justify-content: flex-end;
+	}
+	.around#{$size-name} {
+		justify-content: space-around;
+	}
+	.between#{$size-name} {
+		justify-content: space-between;
+	}
+	.top#{$size-name} {
+		align-items: flex-start;
+	}
+	.middle#{$size-name} {
+		align-items: center;
+	}
+	.bottom#{$size-name} {
+		align-items: flex-end;
+	}
+
+	.row {
+		> .start#{$size-name},
+		> .left#{$size-name}{
+			text-align: left;
+		}
+
+		> .center#{$size-name} {
+			text-align: center;
+		}
+
+		> .end#{$size-name},
+		> .right#{$size-name} {
+			text-align: right;
+		}
+	}
+
+	.col#{$size-name}{
+		@include col;
+	}
+
+	.line#{$size-name} {
+		margin: {
+			top: 1rem;
+			bottom: 1rem;
+		}
+	}
+
+	.auto#{$size-name}  {
+		flex: 0 0 auto !important;
+	}
+
+	.no-gutter#{$size-name}  {
+		padding: 0;
+	}
+
+	@for $i from 1 through $COLUMNS {
+		.col#{$size-name}-#{$i} {
+			@include col;
+			$col: $i / $COLUMNS * 100%;
+			max-width: $col;
+			flex: 0 0 $col;
+		}
+
+		.col-offset#{$size-name}-#{$i} {
+			box-sizing: border-box;
+			margin-left: $i / $COLUMNS * 100%;
+			padding: 0 $GUTTER / 2;
+		}
+
+		.order#{$size-name}-#{$i} {
+			order: $i;
+		}
+
+		.mt#{$size-name}-#{$i} {
+			margin-top: calc(1rem * #{$i});
+		}
+		.mb#{$size-name}-#{$i} {
+			margin-bottom: calc(1rem * #{$i});
+		}
+	}
+}
+
+@include generate();
+
+@each $size-name, $size in $SIZES {
+	@if $size > 0 {
+		@media (min-width: $size) {
+			.hidden#{$size-name} {
+				display: none;
+			}
+
+			@include generate($size-name);
+		}
+	} @else {
+		.hidden#{$size-name} {
+			display: none;
+		}
+
+		@include generate($size-name);
+	}
+}

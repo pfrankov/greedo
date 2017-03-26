@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta charset="UTF-8">
+		<title>Greedo</title>
+		<link rel="stylesheet" href="css/greedo.css"/>
+	</head>
+	<body>
+		<style>
+
+			html {
+				font-family: "Roboto Condensed", sans-serif;
+			}
+
+			body {
+				padding: 0;
+				margin: 0;
+				background: #fff;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			.box {
+				background: #56CBF9;
+				color: #444;
+				padding: 1rem;
+				outline: 1px solid rgba(0,0,0, .1);
+			}
+			.box-alt {
+				background: #81F4E1;
+				color: #248474;
+				padding: 1rem;
+				outline: 1px solid rgba(0,0,0, .1);
+			}
+
+			[class*="col"] {
+				background: rgba(255, 114, 159, 0);
+				outline: 1px solid rgba(255, 114, 159, 0);
+				transition: background .3s, outline .3s .2s;
+			}
+
+			[class*="col"] [class*="col"] {
+				transition: background .3s .5s, outline .3s .7s;
+			}
+			[class*="col"] [class*="col"] [class*="col"] {
+				transition: background .3s 1s, outline .3s 1.2s;
+			}
+
+			.container:hover [class*="col"] {
+				background: rgba(255, 114, 159, .3);
+				outline: 1px solid rgba(255, 114, 159, .3);
+			}
+			.container:hover {
+				outline: 1px solid rgba(255, 114, 159, .3);
+			}
+
+			.container .row {
+				outline: 1px solid rgba(255,255,255,0);
+				transition: all .3s;
+			}
+
+			.container:hover .row {
+				outline: 1px solid rgba(211, 196, 209, 1);
+			}
+
+
+			.debug {
+				transition: all .3s;
+				opacity: 0;
+				position: fixed;
+				top: 1rem;
+				right: 1rem;
+				padding: 0.9rem 1rem;
+				color: #fff;
+				background: #ff729f;
+			}
+
+			.container:hover .debug {
+				opacity: 1;
+			}
+
+			code {
+				padding: 0.5em 1em;
+				background: #D3C4D1;
+				display: inline-block;
+				margin: 0 0.5em;
+				text-shadow: 1px 1px 1px rgba(255,255,255, 0.7);
+			}
+
+		</style>
+
+		<div class="container">
+			<div class="debug" title="I mean this is the Debug Mode. Right now.">Debug Mode</div>
+
+			<h2>Regular columns</h2>
+			<p>
+				Add <code>line</code> class to separate them vertically
+			</p>
+			<p>
+				Column: <code>col-[1-12]</code> <code>col-offset-[1-12]</code>
+			</p>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-5 col-offset-1">
+					<div class="box">
+						.col-5 .col-offset-1
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-7">
+					<div class="box">
+						.col-7
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="box">
+						.col-5
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3">
+					<div class="box">
+						.col-3
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="box">
+						.col-3
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="box">
+						.col-3
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="box">
+						.col-3
+					</div>
+				</div>
+			</div>
+
+			<h2>Any number of columns</h2>
+
+			<p>
+				Column: <code>col-[xs,xm,md,lg]</code> <code title="Auto width">auto-[xs,xm,md,lg]</code>
+			</p>
+
+			<div class="row line">
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+			</div>
+
+			<div class="row line">
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+			</div>
+
+			<div class="row line">
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col auto">
+					<div class="box-alt">
+						.col .auto
+					</div>
+				</div>
+			</div>
+
+			<div class="row line">
+				<div class="col-3">
+					<div class="box">
+						.col-3
+					</div>
+				</div>
+				<div class="col">
+					<div class="box-alt">.col</div>
+				</div>
+				<div class="col-3">
+					<div class="box">
+						.col-3
+					</div>
+				</div>
+			</div>
+
+			<h2>No gutter</h2>
+			<p>
+				Row: <code>no-gutter-[xs,xm,md,lg]</code>
+			</p>
+			<div class="row no-gutter">
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+				<div class="col">
+					<div class="box">
+						.col
+					</div>
+				</div>
+			</div>
+
+			<h2>Nesting</h2>
+
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="box">
+								.col-6
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="box">
+								.col-6
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<div class="box">
+										.col-6
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="box">
+										.col-6
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="box">
+								.col-12
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2>Vertical rows</h2>
+			<p>
+				Column: Also add <code>row</code> class to the column element.
+			</p>
+			<div class="row">
+				<div class="col-6 row">
+					<div class="row">
+						<div class="col">
+							<div class="box">.col</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="box">.col</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 row">
+					<div class="row">
+						<div class="col">
+							<div class="box">
+								.col
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="box">
+								.col
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="box">
+								.col
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2>Responsiveness</h2>
+			<p>
+				Column: <code>col-[xs,sm,md,lg]-[1-12]</code> <code>col-[xs,sm,md,lg]-offset-[1-12]</code> <code>hidden-[xs,sm,md,lg]</code>
+			</p>
+			<div class="row">
+				<div class="col-xs-4 col-md-6">
+					<div class="box">.col-xs-4 .col-md-6</div>
+				</div>
+				<div class="col-xs-4 col-md-6">
+					<div class="box">.col-xs-4 .col-md-6</div>
+				</div>
+				<div class="col-xs-4 hidden-md">
+					<div class="box-alt">.col-xs-4 .hidden-md</div>
+				</div>
+			</div>
+
+			<h2>Order</h2>
+			<p>
+				Column: <code>order-[xs,sm,md,lg]-[1-12]</code>
+			</p>
+			<div class="row">
+				<div class="col-xs-12 col-md-6 order-xs-2 order-md-1">
+					<div class="box">.col-xs-12 .col-md-6 .order-xs-2 .order-md-1</div>
+				</div>
+				<div class="col-xs-12 col-md-6 order-xs-1 order-md-2">
+					<div class="box-alt">.col-xs-12 .col-md-6 .order-xs-1 .order-md-2</div>
+				</div>
+			</div>
+
+			<h2>Align</h2>
+
+			<p>
+				Row: <code>start-[xs,sm,md,lg]</code> <code>center-[xs,sm,md,lg]</code> <code>end-[xs,sm,md,lg]</code>
+				<code>between-[xs,sm,md,lg]</code> <code>around-[xs,sm,md,lg]</code>
+			</p>
+			<p>
+				Column: <code>start-[xs,sm,md,lg]</code> <code>center-[xs,sm,md,lg]</code> <code>end-[xs,sm,md,lg]</code>
+			</p>
+			<div class="row line start">
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+			</div>
+			<div class="row line center-xs">
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+			</div>
+			<div class="row line end">
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+				<div class="col auto">
+					<div class="box">.col .auto</div>
+				</div>
+			</div>
+			<div class="row line center">
+				<div class="col-xs-12 col-md-6 center-xs start-md">
+					<div class="box">.col-xs-12 .col-md-6 .center-xs .start-md</div>
+				</div>
+				<div class="col-xs-12 col-md-6 end">
+					<div class="box">.col-xs-12 .col-md-6 .end</div>
+				</div>
+			</div>
+			<div class="row line between">
+				<div class="col-3">
+					<div class="box">.col-3</div>
+				</div>
+				<div class="col-3">
+					<div class="box">.col-3</div>
+				</div>
+				<div class="col-3">
+					<div class="box">.col-3</div>
+				</div>
+			</div>
+			<div class="row line around">
+				<div class="col-3">
+					<div class="box">.col-3</div>
+				</div>
+				<div class="col-3">
+					<div class="box">.col-3</div>
+				</div>
+				<div class="col-3">
+					<div class="box">.col-3</div>
+				</div>
+			</div>
+
+			<h2>Margins</h2>
+
+			<p>
+				Row: <code>mt-[xs,sm,md,lg]-[1-12]</code>
+			</p>
+			<div class="row">
+				<div class="col-4 row">
+					<div class="row mt-1">
+						<div class="col">
+							<div class="box">.mt-1</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 row">
+					<div class="row mb-1">
+						<div class="col">
+							<div class="box">.mb-1</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 row">
+					<div class="row mb-md-10">
+						<div class="col">
+							<div class="box">.mb-md-10</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

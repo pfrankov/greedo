@@ -1,0 +1,42 @@
+{
+  "name": "greedo",
+  "version": "1.0.1",
+  "description": "Flexbox-based responsive grid system",
+  "main": "greedo.css",
+  "style": "greedo.css",
+  "scripts": {
+    "post": "postcss -c postcss.config.js -o greedo.css src/css/*.css",
+    "pre": "node-sass ./src/css/ --output ./src/css",
+    "watch": "npm run pre -- --watch",
+    "preview": "lite-server --baseDir=\"./src\" --open",
+    "server": "concurrently \"npm run preview\" \"npm run watch\"",
+    "build": "npm run pre && npm run post"
+  },
+  "author": {
+    "name": "Pavel Frankov",
+    "email": "pavel@frankov.ru"
+  },
+  "license": "MIT",
+  "keywords": [
+    "greedo",
+    "grid",
+    "flex",
+    "flexbox",
+    "bootstrap"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "concurrently": "^3.4.0",
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.10.0",
+    "http-server": "^0.9.0",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.1",
+    "postcss-banner": "^3.0.0",
+    "postcss-cli": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/pfrankov/greedo/issues"
+  },
+  "homepage": "https://github.com/pfrankov/greedo"
+}
