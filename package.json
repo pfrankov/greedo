@@ -1,6 +1,6 @@
 {
   "name": "greedo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Flexbox-based responsive grid system",
   "main": "greedo.css",
   "style": "greedo.css",

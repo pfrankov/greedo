@@ -37,7 +37,7 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 
 @mixin col {
 	box-sizing: border-box;
-	flex: 1 1 auto;
+	flex: 1 1 0;
 	padding: 0 $GUTTER / 2;
 	word-wrap: break-word;
 	word-break: break-all;
