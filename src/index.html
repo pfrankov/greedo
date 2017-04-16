@@ -84,10 +84,10 @@
 			}
 
 			code {
-				padding: 0.5em 1em;
-				background: #D3C4D1;
+				padding: 0.3em 0.85em;
+				background: #f3e8f1;
 				display: inline-block;
-				margin: 0 0.5em;
+				margin: 0 0.25em;
 				text-shadow: 1px 1px 1px rgba(255,255,255, 0.7);
 			}
 
@@ -102,6 +102,7 @@
 			</p>
 			<p>
 				Column: <code>col-[1-12]</code> <code>col-offset-[1-12]</code>
+				<code>offset-[1-12]</code>
 			</p>
 			<div class="row">
 				<div class="col-6">
@@ -112,6 +113,18 @@
 				<div class="col-5 col-offset-1">
 					<div class="box">
 						.col-5 .col-offset-1
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-5 offset-1">
+					<div class="box">
+						.col-5 .offset-1
 					</div>
 				</div>
 			</div>
@@ -153,7 +166,7 @@
 			<h2>Any number of columns</h2>
 
 			<p>
-				Column: <code>col-[xs,xm,md,lg]</code> <code title="Auto width">auto-[xs,xm,md,lg]</code>
+				Column: <code>col-[xs,sm,md,lg]</code> <code title="Auto width">auto-[xs,sm,md,lg]</code>
 			</p>
 
 			<div class="row line">
@@ -238,7 +251,7 @@
 
 			<h2>No gutter</h2>
 			<p>
-				Row: <code>no-gutter-[xs,xm,md,lg]</code>
+				Row: <code>no-gutter-[xs,sm,md,lg]</code>
 			</p>
 			<div class="row no-gutter">
 				<div class="col">
@@ -348,7 +361,10 @@
 
 			<h2>Responsiveness</h2>
 			<p>
-				Column: <code>col-[xs,sm,md,lg]-[1-12]</code> <code>col-[xs,sm,md,lg]-offset-[1-12]</code> <code>hidden-[xs,sm,md,lg]</code>
+				Column: <code>col-[xs,sm,md,lg]-[1-12]</code>
+				<code>col-[xs,sm,md,lg]-offset-[1-12]</code>
+				<code>hidden-[xs,sm,md,lg]</code>
+				<code>hidden-[xs,sm,md,lg]-[up,down]</code>
 			</p>
 			<div class="row">
 				<div class="col-xs-4 col-md-6">
@@ -359,6 +375,21 @@
 				</div>
 				<div class="col-xs-4 hidden-md">
 					<div class="box-alt">.col-xs-4 .hidden-md</div>
+				</div>
+			</div>
+
+			<p>
+				Hidden up example: <code>hidden-[xs,sm,md,lg]-up</code>
+			</p>
+			<div class="row line">
+				<div class="col-xs-6 col-md-4">
+					<div class="box">.col-xs-6 .col-md-4</div>
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<div class="box">.col-xs-6 .col-md-4</div>
+				</div>
+				<div class="col-md-4 hidden-md-up">
+					<div class="box-alt">.col-md-4 .hidden-md-up</div>
 				</div>
 			</div>
 

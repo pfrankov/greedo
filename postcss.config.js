@@ -17,6 +17,7 @@ module.exports = {
 		"cssnano": {},
 		"postcss-banner": {
 			banner: banner
-		}
+		},
+		"cssstats": {}
 	}
 };

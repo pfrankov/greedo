@@ -98,7 +98,7 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 		}
 	}
 
-	.col#{$size-name}{
+	.col#{$size-name} {
 		@include col;
 	}
 
@@ -109,11 +109,11 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 		}
 	}
 
-	.auto#{$size-name}  {
+	.auto#{$size-name} {
 		flex: 0 0 auto !important;
 	}
 
-	.no-gutter#{$size-name}  {
+	.no-gutter#{$size-name} {
 		padding: 0;
 	}
 
@@ -125,7 +125,8 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 			flex: 0 0 $col;
 		}
 
-		.col-offset#{$size-name}-#{$i} {
+		.col-offset#{$size-name}-#{$i},
+		.offset#{$size-name}-#{$i} {
 			box-sizing: border-box;
 			margin-left: $i / $COLUMNS * 100%;
 			padding: 0 $GUTTER / 2;
@@ -149,17 +150,23 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 @each $size-name, $size in $SIZES {
 	@if $size > 0 {
 		@media (min-width: $size) {
-			.hidden#{$size-name} {
+			.hidden#{$size-name},
+			.hidden#{$size-name}-down {
 				display: none;
 			}
-
 			@include generate($size-name);
 		}
+
+		@media (max-width: $size) {
+			.hidden#{$size-name}-up {
+				display: none;
+			}
+		}
 	} @else {
-		.hidden#{$size-name} {
+		.hidden#{$size-name},
+		.hidden#{$size-name}-down {
 			display: none;
 		}
-
 		@include generate($size-name);
 	}
 }
