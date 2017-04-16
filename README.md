@@ -19,16 +19,16 @@ npm install --save greedo
 git clone https://github.com/pfrankov/greedo
 ```
 
-#### Usage with Webpack
+#### Usage with [Webpack](https://webpack.js.org/)
 ```javascript
 // ES2015+ / TypeScript
-import * from "greedo"
+import {} from "greedo";
 
 // CommonJS
 require("greedo");
 ```
 
-##### Webpack loaders:
+##### Webpack 2 loaders:
 ```javascript
 {
     test: /\.css$/,
