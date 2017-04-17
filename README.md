@@ -11,15 +11,23 @@ Partial class names compatibility:
 ## Demo
 http://pfrankov.github.io/greedo/
 
+#### Try it!
+https://jsbin.com/xisodasori/edit?html,output
+
 ## Installation
 
 ```bash
 npm install --save greedo
-# or
-git clone https://github.com/pfrankov/greedo
 ```
 
-#### Usage with [Webpack](https://webpack.js.org/)
+## Usage
+
+#### CDN
+```html
+<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v1.1.0/greedo.css"/>
+```
+
+#### With [Webpack](https://webpack.js.org/)
 ```javascript
 // ES2015+ / TypeScript
 import {} from "greedo";
