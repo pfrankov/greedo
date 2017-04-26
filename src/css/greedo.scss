@@ -143,6 +143,23 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 			margin-bottom: calc(1rem * #{$i});
 		}
 	}
+
+	.order#{$size-name}-0 {
+		order: 0;
+	}
+
+	.mt#{$size-name}-0 {
+		margin-top: 0;
+	}
+	.mb#{$size-name}-0 {
+		margin-bottom: 0;
+	}
+
+	.col-offset#{$size-name}-0,
+	.offset#{$size-name}-0 {
+		margin-left: 0;
+		padding: 0 $GUTTER / 2;
+	}
 }
 
 @include generate();
@@ -151,14 +168,14 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 	@if $size > 0 {
 		@media (min-width: $size) {
 			.hidden#{$size-name},
-			.hidden#{$size-name}-down {
+			.hidden#{$size-name}-up {
 				display: none;
 			}
 			@include generate($size-name);
 		}
 
 		@media (max-width: $size) {
-			.hidden#{$size-name}-up {
+			.hidden#{$size-name}-down {
 				display: none;
 			}
 		}
