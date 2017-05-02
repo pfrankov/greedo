@@ -12,7 +12,7 @@ Partial class names compatibility:
 http://pfrankov.github.io/greedo/
 
 #### Try it!
-https://jsbin.com/xisodasori/edit?html,output
+https://jsbin.com/zojane/1/edit?html,css
 
 ## Installation
 
@@ -24,7 +24,7 @@ npm install --save greedo
 
 #### CDN
 ```html
-<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v1.1.0/greedo.css"/>
+<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v2.0.0/greedo.css"/>
 ```
 
 #### With [Webpack](https://webpack.js.org/)
