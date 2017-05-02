@@ -1,9 +1,12 @@
 {
   "name": "greedo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Flexbox-based responsive grid system",
   "main": "greedo.css",
   "style": "greedo.css",
+  "files": [
+    "greedo.css"
+  ],
   "scripts": {
     "post": "postcss -c postcss.config.js -o greedo.css src/css/*.css",
     "pre": "node-sass ./src/css/ --output ./src/css",
@@ -29,12 +32,13 @@
     "concurrently": "^3.4.0",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.10.0",
-    "cssstats": "^3.0.0",
     "http-server": "^0.9.0",
     "lite-server": "^2.3.0",
     "node-sass": "^4.5.1",
     "postcss-banner": "^3.0.0",
-    "postcss-cli": "^3.0.0"
+    "postcss-cli": "^3.0.0",
+    "postcss-csso": "^2.0.0",
+    "postcss-cssstats": "^1.0.0"
   },
   "bugs": {
     "url": "https://github.com/pfrankov/greedo/issues"

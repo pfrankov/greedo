@@ -12,7 +12,7 @@ Partial class names compatibility:
 http://pfrankov.github.io/greedo/
 
 #### Try it!
-https://jsbin.com/zojane/1/edit?html,css
+https://jsbin.com/zojane/edit?html,output
 
 ## Installation
 
@@ -24,19 +24,20 @@ npm install --save greedo
 
 #### CDN
 ```html
-<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v2.0.0/greedo.css"/>
+<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v2.0.1/greedo.css"/>
 ```
 
 #### With [Webpack](https://webpack.js.org/)
 ```javascript
 // ES2015+ / TypeScript
-import {} from "greedo";
+import "greedo";
 
 // CommonJS
 require("greedo");
 ```
 
 ##### Webpack 2 loaders:
+Nothing special. Just regular CSS loaders.
 ```javascript
 {
     test: /\.css$/,

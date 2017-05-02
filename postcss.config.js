@@ -9,15 +9,23 @@ var banner =
 console.log(banner);
 
 module.exports = {
-	plugins: {
-		autoprefixer: {
-			browsers: ["last 2 versions"]
-		},
-		"css-mqpacker": {},
-		"cssnano": {},
-		"postcss-banner": {
+	plugins: [
+		require("autoprefixer")({
+			browsers: ["last 2 versions", "> 1%"]
+		}),
+		require("css-mqpacker")({}),
+		require("postcss-csso")({
+			comments: false
+		}),
+		require("postcss-banner")({
 			banner: banner
-		},
-		"cssstats": {}
-	}
+		}),
+		require("cssnano")({
+			mergeRules: false,
+			discardComments: false
+		}),
+		require("postcss-cssstats")(function (stats) {
+			console.log("Size: ", stats.size, ", ", "gzip Size", stats.gzipSize);
+		})
+	]
 };
