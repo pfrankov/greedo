@@ -166,7 +166,7 @@
 			<h2>Any number of columns</h2>
 
 			<p>
-				Column: <code>col-[xs,sm,md,lg]</code> <code title="Auto width">auto-[xs,sm,md,lg]</code>
+				Column: <code>col-[xs,sm,md,lg,xl]</code> <code title="Auto width">auto-[xs,sm,md,lg,xl]</code>
 			</p>
 
 			<div class="row line">
@@ -251,7 +251,7 @@
 
 			<h2>No gutter</h2>
 			<p>
-				Row: <code>no-gutter-[xs,sm,md,lg]</code>
+				Row: <code>no-gutter-[xs,sm,md,lg,xl]</code>
 			</p>
 			<div class="row no-gutter">
 				<div class="col">
@@ -361,10 +361,10 @@
 
 			<h2>Responsiveness</h2>
 			<p>
-				Column: <code>col-[xs,sm,md,lg]-[1-12]</code>
-				<code>col-[xs,sm,md,lg]-offset-[1-12]</code>
-				<code>hidden-[xs,sm,md,lg]</code>
-				<code>hidden-[xs,sm,md,lg]-[up,down]</code>
+				Column: <code>col-[xs,sm,md,lg,xl]-[1-12]</code>
+				<code>col-[xs,sm,md,lg,xl]-offset-[1-12]</code>
+				<code>hidden-[xs,sm,md,lg,xl]</code>
+				<code>hidden-[xs,sm,md,lg,xl]-[up,down]</code>
 			</p>
 			<div class="row">
 				<div class="col-xs-4 col-md-6">
@@ -379,7 +379,7 @@
 			</div>
 
 			<p>
-				Hidden down example: <code>hidden-[xs,sm,md,lg]-down</code>
+				Hidden down example: <code>hidden-[xs,sm,md,lg,xl]-down</code>
 			</p>
 			<div class="row line">
 				<div class="col-xs-6 col-md-4">
@@ -395,7 +395,7 @@
 
 			<h2>Order</h2>
 			<p>
-				Column: <code>order-[xs,sm,md,lg]-[1-12]</code>
+				Column: <code>order-[xs,sm,md,lg,xl]-[1-12]</code>
 			</p>
 			<div class="row">
 				<div class="col-xs-12 col-md-6 order-xs-2 order-md-1">
@@ -409,11 +409,11 @@
 			<h2>Align</h2>
 
 			<p>
-				Row: <code>start-[xs,sm,md,lg]</code> <code>center-[xs,sm,md,lg]</code> <code>end-[xs,sm,md,lg]</code>
-				<code>between-[xs,sm,md,lg]</code> <code>around-[xs,sm,md,lg]</code>
+				Row: <code>start-[xs,sm,md,lg,xl]</code> <code>center-[xs,sm,md,lg,xl]</code> <code>end-[xs,sm,md,lg,xl]</code>
+				<code>between-[xs,sm,md,lg,xl]</code> <code>around-[xs,sm,md,lg,xl]</code>
 			</p>
 			<p>
-				Column: <code>start-[xs,sm,md,lg]</code> <code>center-[xs,sm,md,lg]</code> <code>end-[xs,sm,md,lg]</code>
+				Column: <code>start-[xs,sm,md,lg,xl]</code> <code>center-[xs,sm,md,lg,xl]</code> <code>end-[xs,sm,md,lg,xl]</code>
 			</p>
 			<div class="row line start">
 				<div class="col auto">
@@ -482,7 +482,7 @@
 			<h2>Margins</h2>
 
 			<p>
-				Row: <code>mt-[xs,sm,md,lg]-[1-12]</code>
+				Row: <code>mt-[xs,sm,md,lg,xl]-[1-12]</code>
 			</p>
 			<div class="row">
 				<div class="col-4 row">
@@ -504,6 +504,101 @@
 						<div class="col">
 							<div class="box">.mb-md-10</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2>Discrete container width</h2>
+			<p>
+				Container: <code>container-fix</code> <code>container-fix-[sm,md,lg,xl]</code>
+			</p>
+			<p>
+				Change window width to see
+			</p>
+		</div>
+		<div class="container-fix">
+			<p>
+				Container: <code>container-fix</code>
+			</p>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fix-sm">
+			<p>
+				Container: <code>container-fix-sm</code>
+			</p>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fix-md">
+			<p>
+				Container: <code>container-fix-md</code>
+			</p>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fix-lg">
+			<p>
+				Container: <code>container-fix-lg</code>
+			</p>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container container-fix-xl mb-5">
+			<p>
+				Container: <code>container-fix-xl</code>
+			</p>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						.col-6
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						.col-6
 					</div>
 				</div>
 			</div>

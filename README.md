@@ -9,6 +9,7 @@ Partial class names compatibility:
 - [x] Flexbox Grid
 
 ## Demo
+http://sizzy.co?url=http://pfrankov.github.io/greedo/  
 http://pfrankov.github.io/greedo/
 
 #### Try it!
@@ -24,7 +25,7 @@ npm install --save greedo
 
 #### CDN
 ```html
-<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v2.0.1/greedo.css"/>
+<link rel="stylesheet" href="//cdn.rawgit.com/pfrankov/greedo/v2.1.0/greedo.css"/>
 ```
 
 #### With [Webpack](https://webpack.js.org/)

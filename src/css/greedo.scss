@@ -1,12 +1,13 @@
 $COLUMNS: 12;
 $GUTTER: 1rem;
 
-$xs-min: 0;
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
+$xs-min: (0, 0);
+$sm-min: (576px, 540px);
+$md-min: (768px, 720px);
+$lg-min: (992px, 960px);
+$xl-min: (1200px, 1140px);
 
-$SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
+$SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min), (-xl, $xl-min));
 
 .container {
 	max-width: 1450px;
@@ -164,13 +165,42 @@ $SIZES: ((-xs, $xs-min), (-sm, $sm-min), (-md, $md-min), (-lg, $lg-min));
 
 @include generate();
 
-@each $size-name, $size in $SIZES {
+@each $size-name, $sizeList in $SIZES {
+	$i: index($SIZES, ($size-name, $sizeList));
+	$size: nth($sizeList, 1);
+	$max-width: nth($sizeList, 2);
+
+	.container-fix,
+	.container-fix#{$size-name} {
+		padding: 0 1rem;
+		margin: {
+			left: auto;
+			right: auto;
+		};
+	}
+
 	@if $size > 0 {
 		@media (min-width: $size) {
 			.hidden#{$size-name},
 			.hidden#{$size-name}-up {
 				display: none;
 			}
+
+			.container-fix,
+			.container-fix#{$size-name} {
+				max-width: $max-width;
+			}
+
+			@each $size-name, $sizeList in $SIZES {
+				$_i: index($SIZES, ($size-name, $sizeList));
+
+				@if $_i < $i AND $_i > 1 {
+					.container-fix#{$size-name} {
+						max-width: $max-width;
+					}
+				}
+			}
+
 			@include generate($size-name);
 		}
 
